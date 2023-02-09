@@ -12,7 +12,7 @@ function App() {
 		<div className="App">
 			<Navbar />
 			<MusicInfo currentSong={currentSong} />
-			<Player />
+			<Player currentSong={currentSong} />
 		</div>
 	);
 }
