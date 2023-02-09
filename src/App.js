@@ -1,7 +1,14 @@
+import MusicInfo from './Components/MusicInfo';
+import Navbar from './Components/Navbar';
+import Player from './Components/Player';
+import './Styles/Global.scss';
+
 function App() {
 	return (
 		<div className="App">
-			<h1>Simple Music player App Initial Settings Done</h1>
+			<Navbar />
+			<MusicInfo />
+			<Player />
 		</div>
 	);
 }
