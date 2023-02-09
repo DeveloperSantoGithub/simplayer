@@ -17,9 +17,10 @@ export default function LocalDatabase() {
 			cover:
 				'https://chillhop.com/wp-content/uploads/2022/01/5753da482a6839b31e4905b22a2f8d65913e7eb4-1024x1024.jpg',
 			audio: 'https://mp3.chillhop.com/serve.php/?mp3=28955',
+			artist: 'Marc Mathias',
 			color: ['#FEF5E6', '#9BC0D6'],
 			id: uuidv4(),
-			active: true,
+			active: false,
 		},
 		{
 			name: 'Tomorrow Never Knows',
@@ -29,7 +30,7 @@ export default function LocalDatabase() {
 			audio: 'https://mp3.chillhop.com/serve.php/?mp3=8034',
 			color: ['#FB8189', '#F4F1EA'],
 			id: uuidv4(),
-			active: true,
+			active: false,
 		},
 		{
 			name: 'Dog Days',
@@ -39,7 +40,7 @@ export default function LocalDatabase() {
 			audio: 'https://mp3.chillhop.com/serve.php/?mp3=8689',
 			color: ['#3A496D', '#7BCBAF'],
 			id: uuidv4(),
-			active: true,
+			active: false,
 		},
 		{
 			name: 'grandiose soul',
@@ -49,7 +50,7 @@ export default function LocalDatabase() {
 			audio: 'https://mp3.chillhop.com/serve.php/?mp3=8698',
 			color: ['#B29457', '#EFF0EB'],
 			id: uuidv4(),
-			active: true,
+			active: false,
 		},
 	];
 }

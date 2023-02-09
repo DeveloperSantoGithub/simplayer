@@ -1,9 +1,9 @@
-export default function MusicInfo() {
+export default function MusicInfo({ currentSong }) {
 	return (
 		<div className="musicInfo">
-			<h1>Song Title</h1>
-			<h1>Picture</h1>
-			<h1>Artist</h1>
+			<img src={currentSong.cover} alt="cover" />
+			<h1>{currentSong.name}</h1>
+			<h2>{currentSong.artist}</h2>
 		</div>
 	);
 }
