@@ -1,14 +1,43 @@
-.musicInfo {
+.musicPlayer {
 	width: 100%;
-	height: 40vh;
+	min-height: 20vh;
 
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	flex-direction: column;
-	background: #ffaaaa;
+	font-family: 'Inter', sans-serif;
 
-	h1 {
-		padding: 1rem;
+	.timeControl {
+		width: 50%;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		background: #ffe8e8;
+
+		input {
+			width: 100%;
+			padding: 1rem 2rem;
+		}
+
+		p {
+			padding: 1rem;
+		}
+	}
+
+	.playControl {
+		background: #eaffc3;
+		width: 25%;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		span {
+			font-size: 2.5rem;
+			cursor: pointer;
+		}
 	}
 }

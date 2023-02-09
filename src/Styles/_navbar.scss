@@ -1,18 +1,25 @@
 .navbar {
 	width: 100%;
-	height: 7vh;
+	height: 6vh;
+
+	background: #1f1f1f;
 
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-around;
 
 	.logo {
-		background: #fcbfbf;
 		padding: 0.5rem;
 		text-transform: uppercase;
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-			sans-serif;
-		letter-spacing: 1rem;
-		color: #fff;
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-weight: 500;
+		letter-spacing: 0.5rem;
+		color: #00b84c;
+
+		span {
+			font-size: 2.2rem;
+			padding: 0;
+			margin: 0;
+		}
 	}
 }

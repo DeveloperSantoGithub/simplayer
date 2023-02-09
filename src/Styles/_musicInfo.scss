@@ -1,0 +1,16 @@
+.musicInfo {
+	width: 100%;
+	min-height: 60vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	background: #ffaaaa;
+
+	font-family: 'Inter', sans-serif;
+
+	h1 {
+		padding: 1rem;
+	}
+}
