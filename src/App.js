@@ -6,13 +6,18 @@ import data from './LocalDatabase';
 import './Styles/Global.scss';
 function App() {
 	const [songs, setSongs] = useState(data());
-	const [currentSong, CurrentSong] = useState(songs[0]);
+	const [currentSong, setCurrentSong] = useState(songs[0]);
+	const [isPlaying, setIsPlaying] = useState(' ');
 
 	return (
 		<div className="App">
 			<Navbar />
 			<MusicInfo currentSong={currentSong} />
-			<Player currentSong={currentSong} />
+			<Player
+				currentSong={currentSong}
+				isPlaying={isPlaying}
+				setIsPlaying={setIsPlaying}
+			/>
 		</div>
 	);
 }
