@@ -1,12 +1,16 @@
 export default function LibraryTracks({
+	songs,
 	song,
 	setCurrentSong,
 	songsRef,
 	isPlaying,
+	setSongs,
+	id,
 }) {
 	const handleTrackSelect = async () => {
 		await setCurrentSong(song);
 
+		//=> Checking Audio Play:
 		if (!isPlaying) {
 			const playPromise = songsRef.current.play();
 
@@ -16,13 +20,25 @@ export default function LibraryTracks({
 				});
 			}
 		}
+
+		//=> Change Active State:
+		const activeSong = songs.map((newSong) => {
+			if (newSong.id === id) {
+				return { ...newSong, active: true };
+			} else {
+				return { ...newSong, active: false };
+			}
+		});
+
+		setSongs(activeSong);
 	};
 
 	return (
 		<div
-			onDoubleClick={handleTrackSelect}
+			onClick={handleTrackSelect}
 			className={`track  ${song.active ? 'selectedTrack' : null}`}
 		>
+			<p className="doubleClick">Click</p>
 			<div className="tarckImage">
 				<img src={song.cover} alt="cover" />
 			</div>

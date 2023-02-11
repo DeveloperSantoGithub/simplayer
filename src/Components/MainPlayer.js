@@ -4,7 +4,7 @@ import MusicLibrary from '../Components/MusicLibrary';
 import Player from '../Components/Player';
 import data from '../LocalDatabase';
 
-export default function MainPlayer() {
+export default function MainPlayer({ libraryStatus }) {
 	const songsRef = useRef();
 
 	const [songs, setSongs] = useState(data());
@@ -33,6 +33,7 @@ export default function MainPlayer() {
 				songsRef={songsRef}
 				setSongs={setSongs}
 				isPlaying={isPlaying}
+				libraryStatus={libraryStatus}
 			/>
 			<MusicInfo currentSong={currentSong} />
 			<Player

@@ -7,13 +7,19 @@
 	left: 0;
 	overflow: scroll;
 
-	background: #fdfff7;
-	box-shadow: 2px 2px 30px rgb(201, 201, 201);
+	background: rgba(0, 0, 0, 0.8);
+	backdrop-filter: saturate(180%) blur(10px);
+
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5);
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: all 0.5s ease;
 
 	h2 {
 		font-family: 'Inter', sans-serif;
 		font-size: 2rem;
 		margin: 1rem;
+		color: #00b84c;
 	}
 
 	.libraryTracks {
@@ -37,6 +43,7 @@
 	background: #252525;
 	display: flex;
 	align-items: center;
+	position: relative;
 
 	margin: 0.5rem;
 	padding: 0.7rem;
@@ -45,11 +52,31 @@
 	transition: all 0.3s ease;
 	cursor: pointer;
 
+	.doubleClick {
+		position: absolute;
+		padding: 4px 7px;
+		background: #ffffff4b;
+		color: #00b84c;
+		font-size: 0.85rem;
+		font-family: 'Inter', sans-serif;
+
+		border-radius: 10px;
+
+		top: 5px;
+		right: 5px;
+		display: none;
+	}
+
 	&:hover {
 		background: #000;
 
 		.trackInfo {
 			color: #00b84c;
+		}
+
+		.doubleClick {
+			transition: all 0.5s ease;
+			display: block;
 		}
 	}
 
@@ -106,6 +133,11 @@
 	.trackInfo {
 		color: #252525;
 	}
+}
+
+.activeLibrary {
+	transform: translateX(0%);
+	opacity: 1;
 }
 
 * {

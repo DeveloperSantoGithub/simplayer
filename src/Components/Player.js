@@ -35,11 +35,11 @@ export default function Player({
 				<input
 					type="range"
 					min="0"
-					max={songInfo.duration}
+					max={songInfo.duration || 0}
 					value={songInfo.currentTime}
 					onChange={dragHandler}
 				/>
-				<p>{timeFormater(songInfo.duration)}</p>
+				<p>{timeFormater(songInfo.duration || 0)}</p>
 			</div>
 			<div className="playControl">
 				<span className="material-icons-outlined">navigate_before</span>
