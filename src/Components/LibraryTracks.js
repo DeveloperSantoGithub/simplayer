@@ -6,8 +6,8 @@ export default function LibraryTracks({ song }) {
 			</div>
 
 			<div className="trackInfo">
-				<h2>{song.name}</h2>
-				<h3>{song.artist}</h3>
+				<h3>{song.name}</h3>
+				<h4>{song.artist}</h4>
 			</div>
 		</div>
 	);

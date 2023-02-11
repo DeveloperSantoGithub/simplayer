@@ -1,5 +1,5 @@
 .Library {
-	width: 30%;
+	width: 20%;
 	height: 100%;
 
 	position: fixed;
@@ -26,12 +26,12 @@
 }
 
 .track {
-	background: #eaffdd;
+	background: #2c2c2c;
 	display: flex;
 	align-items: center;
 
-	margin: 1rem 1rem;
-	padding: 1rem 1rem;
+	margin: 0.5rem;
+	padding: 1rem;
 	border-radius: 15px;
 
 	.tarckImage {
@@ -53,12 +53,14 @@
 		align-items: flex-start;
 		flex-direction: column;
 
-		h2 {
-			font-size: 1.5rem;
-		}
+		color: #00b84c;
 
 		h3 {
-			font-size: 0.8rem;
+			margin-bottom: 0.5rem;
+		}
+
+		h4 {
+			font-size: 0.85rem;
 		}
 	}
 }
