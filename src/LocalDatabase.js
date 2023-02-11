@@ -52,5 +52,35 @@ export default function LocalDatabase() {
 			id: uuidv4(),
 			active: false,
 		},
+		{
+			name: 'grandiose soul',
+			cover:
+				'https://chillhop.com/wp-content/uploads/2023/02/71374d07888a8b1b3fbef53b82d283f53209cc1a-1024x1024.jpg',
+			artist: 'Masked Man',
+			audio: 'https://mp3.chillhop.com/serve.php/?mp3=8698',
+			color: ['#B29457', '#EFF0EB'],
+			id: uuidv4(),
+			active: false,
+		},
+		{
+			name: 'grandiose soul',
+			cover:
+				'https://chillhop.com/wp-content/uploads/2023/02/71374d07888a8b1b3fbef53b82d283f53209cc1a-1024x1024.jpg',
+			artist: 'Masked Man',
+			audio: 'https://mp3.chillhop.com/serve.php/?mp3=8698',
+			color: ['#B29457', '#EFF0EB'],
+			id: uuidv4(),
+			active: false,
+		},
+		{
+			name: 'grandiose soul',
+			cover:
+				'https://chillhop.com/wp-content/uploads/2023/02/71374d07888a8b1b3fbef53b82d283f53209cc1a-1024x1024.jpg',
+			artist: 'Masked Man',
+			audio: 'https://mp3.chillhop.com/serve.php/?mp3=8698',
+			color: ['#B29457', '#EFF0EB'],
+			id: uuidv4(),
+			active: false,
+		},
 	];
 }
