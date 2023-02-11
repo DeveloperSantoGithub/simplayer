@@ -1,5 +1,64 @@
 .Library {
+	width: 30%;
+	height: 100%;
+
 	position: fixed;
 	top: 0;
 	left: 0;
+	overflow: scroll;
+
+	background: #fcfffe;
+
+	h2 {
+		font-family: 'Inter', sans-serif;
+		font-size: 2rem;
+		margin: 1rem;
+	}
+
+	.libraryTracks {
+		// background: #000;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+}
+
+.track {
+	background: #eaffdd;
+	display: flex;
+	align-items: center;
+
+	margin: 1rem 1rem;
+	padding: 1rem 1rem;
+	border-radius: 15px;
+
+	.tarckImage {
+		width: 30%;
+
+		img {
+			width: 100%;
+			border-radius: 15px;
+
+			object-fit: cover;
+		}
+	}
+
+	.trackInfo {
+		font-family: 'Inter', sans-serif;
+		margin-left: 2rem;
+
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+
+		h2 {
+			font-size: 1.5rem;
+		}
+
+		h3 {
+			font-size: 0.8rem;
+		}
+	}
 }
