@@ -39,7 +39,7 @@
 	align-items: center;
 
 	margin: 0.5rem;
-	padding: 1rem;
+	padding: 0.7rem;
 	border-radius: 15px;
 
 	transition: all 0.3s ease;
@@ -47,6 +47,10 @@
 
 	&:hover {
 		background: #000;
+
+		.trackInfo {
+			color: #00b84c;
+		}
 	}
 
 	.tarckImage {
@@ -54,7 +58,7 @@
 
 		img {
 			width: 100%;
-			border-radius: 15px;
+			border-radius: 10px;
 
 			object-fit: cover;
 		}
@@ -94,6 +98,13 @@
 				font-size: 0.6rem;
 			}
 		}
+	}
+}
+
+.selectedTrack {
+	background: #08b14e;
+	.trackInfo {
+		color: #252525;
 	}
 }
 

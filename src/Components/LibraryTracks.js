@@ -19,7 +19,10 @@ export default function LibraryTracks({
 	};
 
 	return (
-		<div onDoubleClick={handleTrackSelect} className="track">
+		<div
+			onDoubleClick={handleTrackSelect}
+			className={`track  ${song.active ? 'selectedTrack' : null}`}
+		>
 			<div className="tarckImage">
 				<img src={song.cover} alt="cover" />
 			</div>
