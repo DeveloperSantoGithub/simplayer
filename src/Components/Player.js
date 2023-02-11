@@ -1,22 +1,12 @@
-import { useRef, useState } from 'react';
-
-export default function Player({ currentSong, isPlaying, setIsPlaying }) {
-	const [songInfo, setSongInfo] = useState({
-		currentTime: 0,
-		duration: 0,
-	});
-
-	const songsRef = useRef();
-
+export default function Player({
+	currentSong,
+	isPlaying,
+	setIsPlaying,
+	songInfo,
+	songsRef,
+	setSongInfo,
+}) {
 	//=> All Events Handler:
-	const handleUpdateTime = (e) => {
-		setSongInfo({
-			...songInfo,
-			currentTime: e.target.currentTime,
-			duration: e.target.duration,
-		});
-	};
-
 	const timeFormater = (time) => {
 		return (
 			Math.floor(time / 60) + ':' + ('0' + Math.floor(time % 60)).slice(-2)
@@ -66,13 +56,6 @@ export default function Player({ currentSong, isPlaying, setIsPlaying }) {
 
 				<span className="material-icons-outlined">navigate_next</span>
 			</div>
-
-			<audio
-				onTimeUpdate={handleUpdateTime}
-				onLoadedMetadata={handleUpdateTime}
-				src={currentSong.audio}
-				ref={songsRef}
-			/>
 		</div>
 	);
 }
