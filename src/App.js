@@ -1,26 +1,12 @@
-import { useState } from 'react';
-import MusicInfo from './Components/MusicInfo';
-import MusicLibrary from './Components/MusicLibrary';
+import MainPlayer from './Components/MainPlayer';
 import Navbar from './Components/Navbar';
-import Player from './Components/Player';
-import data from './LocalDatabase';
 import './Styles/Global.scss';
 
 function App() {
-	const [songs, setSongs] = useState(data());
-	const [currentSong, setCurrentSong] = useState(songs[0]);
-	const [isPlaying, setIsPlaying] = useState(' ');
-
 	return (
 		<div className="App">
 			<Navbar />
-			<MusicLibrary songs={songs} />
-			<MusicInfo currentSong={currentSong} />
-			<Player
-				currentSong={currentSong}
-				isPlaying={isPlaying}
-				setIsPlaying={setIsPlaying}
-			/>
+			<MainPlayer />
 		</div>
 	);
 }

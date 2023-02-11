@@ -1,6 +1,10 @@
-export default function LibraryTracks({ song }) {
+export default function LibraryTracks({ song, setCurrentSong }) {
+	const handleTrackSelect = async () => {
+		await setCurrentSong(song);
+	};
+
 	return (
-		<div className="track">
+		<div onDoubleClick={handleTrackSelect} className="track">
 			<div className="tarckImage">
 				<img src={song.cover} alt="cover" />
 			</div>
