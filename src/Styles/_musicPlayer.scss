@@ -4,7 +4,7 @@
 
 	display: flex;
 	align-items: center;
-	// justify-content: space-evenly;
+	justify-content: space-between;
 	flex-direction: column;
 	font-family: 'Inter', sans-serif;
 
@@ -12,9 +12,8 @@
 		width: 50%;
 
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
-		padding-bottom: 2rem;
+		// padding-bottom: 2rem;
 
 		input {
 			width: 100%;
@@ -27,13 +26,14 @@
 
 		// background: #ffe8e8;
 		p {
-			margin: 0 1rem;
+			padding: 0 1rem;
 		}
 	}
 
 	.playControl {
 		// background: #eaffc3;
 		width: 25%;
+		padding: 1rem;
 
 		display: flex;
 		align-items: center;
