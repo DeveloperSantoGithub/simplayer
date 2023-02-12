@@ -38,4 +38,32 @@
 			color: #f2f2f2;
 		}
 	}
+
+	@media screen and (max-width: 500px) {
+		.logo {
+			font-size: 1.7rem;
+
+			span {
+				font-size: 1.7rem;
+			}
+		}
+
+		.library-icon {
+			font-size: 1.7rem;
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+		.logo {
+			font-size: 1.2rem;
+
+			span {
+				font-size: 1.2rem;
+			}
+		}
+
+		.library-icon {
+			font-size: 1.5rem;
+		}
+	}
 }

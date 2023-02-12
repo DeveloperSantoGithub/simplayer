@@ -10,7 +10,7 @@ export default function MusicLibrary({
 }) {
 	return (
 		<div
-			className={`Library  ${libraryStatus === true ? 'activeLibrary' : ''}`}
+			className={`Library  ${libraryStatus === true ? 'activeLibrary' : ''} `}
 		>
 			<h2>Library</h2>
 			<div className="libraryTracks">

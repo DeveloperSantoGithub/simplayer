@@ -1,5 +1,3 @@
-import { PlayAudio } from './Tools';
-
 export default function LibraryTracks({
 	songs,
 	song,
@@ -13,7 +11,7 @@ export default function LibraryTracks({
 		await setCurrentSong(song);
 
 		//=> Checking Audio Play:
-		PlayAudio(isPlaying, songsRef);
+		if (!isPlaying) songsRef.current.play();
 
 		//=> Change Active State:
 		const activeSong = songs.map((newSong) => {

@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { PlayAudio } from './Tools';
 
 export default function Player({
 	currentSong,
@@ -14,9 +13,6 @@ export default function Player({
 }) {
 	//=> useEffects:
 	useEffect(() => {
-		//=> Checking Audio Play:
-		PlayAudio(isPlaying, songsRef);
-
 		//=> Change Active State:
 		const activeSong = songs.map((newSong) => {
 			if (newSong.id === currentSong.id) {
@@ -31,12 +27,15 @@ export default function Player({
 	}, [currentSong]);
 
 	//=> All Events Handler:
+
+	//-->> Time Formater:
 	const timeFormater = (time) => {
 		return (
 			Math.floor(time / 60) + ':' + ('0' + Math.floor(time % 60)).slice(-2)
 		);
 	};
 
+	//-->> Pause and Play Button:
 	const handlePlaySongs = () => {
 		if (!isPlaying) {
 			songsRef.current.pause();
@@ -47,26 +46,30 @@ export default function Player({
 		}
 	};
 
+	//-->> Input Drager:
 	const dragHandler = (e) => {
 		songsRef.current.currentTime = e.target.value;
 		setSongInfo({ ...songInfo, currentTime: e.target.value });
 	};
 
-	const handleSkipButton = (direction) => {
+	//-->> Next and Back Button:
+	const handleSkipButton = async (direction) => {
 		const currentIndex = songs.findIndex((song) => song.id === currentSong.id);
 
 		if (direction === 'skipNext') {
-			setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+			await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
 		}
 
 		if (direction === 'skipBack') {
 			if ((currentIndex - 1) % songs.length === -1) {
-				setCurrentSong(songs[songs.length - 1]);
-
+				await setCurrentSong(songs[songs.length - 1]);
+				if (!isPlaying) songsRef.current.play();
 				return; // if we do not provide return here. Then the bellow code will be execute and gives us an error.
 			}
-			setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+			await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
 		}
+		//-->> Play Audio:
+		if (!isPlaying) songsRef.current.play();
 	};
 
 	//=> Animate Track:

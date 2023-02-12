@@ -18,6 +18,31 @@ export default function MainPlayer({ libraryStatus }) {
 	});
 
 	//=> Events Handlers:
+	//-->> Track Auto Play Handler:
+	// const trackAutoPlayHandler = async () => {
+	// 	const currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+
+	// 	await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+
+	// 	//-->> Play Audio:
+
+	// 	const playPromise = songsRef.current.play();
+
+	// 	if (playPromise !== undefined) {
+	// 		playPromise
+	// 			.then((audio) => {
+	// 				songsRef.current.play();
+	// 				console.log(songsRef.current.play());
+	// 			})
+	// 			.catch((error) => {
+	// 				console.log(error);
+	// 			});
+	// 	}
+
+	// 	// if (!isPlaying) songsRef.current.play();
+	// };
+
+	//-->> Track Time Updater:
 	const handleUpdateTime = (e) => {
 		const current = e.target.currentTime;
 		const duration = e.target.duration;
@@ -28,8 +53,6 @@ export default function MainPlayer({ libraryStatus }) {
 
 		//=> Percentage:
 		const percentage = Math.round((roundedCurrent / roundedDuration) * 100);
-
-		console.log(percentage);
 
 		setSongInfo({
 			...songInfo,
