@@ -73,13 +73,17 @@ export default function Player({
 		<div className="musicPlayer">
 			<div className="timeControl">
 				<p>{timeFormater(songInfo.currentTime)}</p>
-				<input
-					type="range"
-					min="0"
-					max={songInfo.duration || 0}
-					value={songInfo.currentTime}
-					onChange={dragHandler}
-				/>
+
+				<div className="inputField">
+					<input
+						type="range"
+						min="0"
+						max={songInfo.duration || 0}
+						value={songInfo.currentTime}
+						onChange={dragHandler}
+					/>
+					<div className="animated-inputField"></div>
+				</div>
 				<p>{timeFormater(songInfo.duration || 0)}</p>
 			</div>
 			<div className="playControl">
