@@ -41,9 +41,11 @@ export default function MainPlayer({ libraryStatus }) {
 				isPlaying={isPlaying}
 				setIsPlaying={setIsPlaying}
 				songsRef={songsRef}
+				songs={songs}
 				setSongs={setSongs}
 				setSongInfo={setSongInfo}
 				songInfo={songInfo}
+				setCurrentSong={setCurrentSong}
 			/>
 
 			<audio
