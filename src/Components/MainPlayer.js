@@ -14,14 +14,28 @@ export default function MainPlayer({ libraryStatus }) {
 	const [songInfo, setSongInfo] = useState({
 		currentTime: 0,
 		duration: 0,
+		animationPercentage: 0,
 	});
 
 	//=> Events Handlers:
 	const handleUpdateTime = (e) => {
+		const current = e.target.currentTime;
+		const duration = e.target.duration;
+
+		//=> Rounded Value:
+		const roundedCurrent = Math.round(current);
+		const roundedDuration = Math.round(duration);
+
+		//=> Percentage:
+		const percentage = Math.round((roundedCurrent / roundedDuration) * 100);
+
+		console.log(percentage);
+
 		setSongInfo({
 			...songInfo,
 			currentTime: e.target.currentTime,
 			duration: e.target.duration,
+			animationPercentage: percentage,
 		});
 	};
 
@@ -47,7 +61,6 @@ export default function MainPlayer({ libraryStatus }) {
 				songInfo={songInfo}
 				setCurrentSong={setCurrentSong}
 			/>
-
 			<audio
 				onTimeUpdate={handleUpdateTime}
 				onLoadedMetadata={handleUpdateTime}

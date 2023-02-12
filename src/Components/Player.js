@@ -69,12 +69,27 @@ export default function Player({
 		}
 	};
 
+	//=> Animate Track:
+	const trackAnimation = {
+		transform: `translateX(${songInfo.animationPercentage}%)`,
+	};
+
 	return (
-		<div className="musicPlayer">
+		<div
+			style={{
+				background: `linear-gradient( to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+			}}
+			className="musicPlayer"
+		>
 			<div className="timeControl">
 				<p>{timeFormater(songInfo.currentTime)}</p>
 
-				<div className="inputField">
+				<div
+					style={{
+						background: `linear-gradient( to right, ${currentSong.color[1]}, ${currentSong.color[0]})`,
+					}}
+					className="inputField"
+				>
 					<input
 						type="range"
 						min="0"
@@ -82,7 +97,7 @@ export default function Player({
 						value={songInfo.currentTime}
 						onChange={dragHandler}
 					/>
-					<div className="animated-inputField"></div>
+					<div style={trackAnimation} className="animated-inputField"></div>
 				</div>
 				<p>{timeFormater(songInfo.duration || 0)}</p>
 			</div>
