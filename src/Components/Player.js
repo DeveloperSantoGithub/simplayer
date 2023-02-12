@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { PlayAudio } from './Tools';
+
 export default function Player({
 	currentSong,
 	isPlaying,
@@ -6,8 +9,27 @@ export default function Player({
 	songsRef,
 	setSongInfo,
 	songs,
+	setSongs,
 	setCurrentSong,
 }) {
+	//=> useEffects:
+	useEffect(() => {
+		//=> Checking Audio Play:
+		PlayAudio(isPlaying, songsRef);
+
+		//=> Change Active State:
+		const activeSong = songs.map((newSong) => {
+			if (newSong.id === currentSong.id) {
+				return { ...newSong, active: true };
+			} else {
+				return { ...newSong, active: false };
+			}
+		});
+
+		setSongs(activeSong);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [currentSong]);
+
 	//=> All Events Handler:
 	const timeFormater = (time) => {
 		return (
@@ -40,6 +62,7 @@ export default function Player({
 		if (direction === 'skipBack') {
 			if ((currentIndex - 1) % songs.length === -1) {
 				setCurrentSong(songs[songs.length - 1]);
+
 				return; // if we do not provide return here. Then the bellow code will be execute and gives us an error.
 			}
 			setCurrentSong(songs[(currentIndex - 1) % songs.length]);
